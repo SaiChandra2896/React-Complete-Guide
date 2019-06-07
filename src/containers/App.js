@@ -24,6 +24,24 @@ class App extends Component {
   componentDidMount() {
     console.log("[App.js]inside component did mount");
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(
+      "[Update App.js] inside should component update",
+      nextProps,
+      nextState
+    );
+    return true;
+  }
+  componentWillUpdate(nextProps, nextState) {
+    console.log(
+      "[Update App.js] inside component will update",
+      nextProps,
+      nextState
+    );
+  }
+  componentDidUpdate() {
+    console.log("[Update App.js] inside component did update"); //the next props and next state are in current state now(this.props and this.state)
+  }
   // state = {
   //   persons: [
   //     { id: "asdas", name: "Sai", age: 24 },

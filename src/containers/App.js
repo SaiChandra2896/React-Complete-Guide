@@ -96,6 +96,9 @@ class App extends Component {
     return (
       <StyleRoot>
         <div className="App">
+          <button onClick={() => this.setState({ showPersons: true })}>
+            Show Persons
+          </button>
           <Cockpit
             showPersons={this.state.showPersons}
             persons={this.state.persons}

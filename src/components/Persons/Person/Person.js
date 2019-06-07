@@ -8,7 +8,18 @@ let style = {
   }
 };
 class Person extends Component {
+  constructor(props) {
+    super(props);
+    console.log("[Person.js] inside constructor", props);
+  }
+  componentWillMount() {
+    console.log("[Person.js] inside component will mount");
+  }
+  componentDidMount() {
+    console.log("[Person.js] inside component did mount");
+  }
   render() {
+    console.log("[Person.js] inside render");
     return (
       <div className="Person">
         <p onClick={this.props.click} style={style}>

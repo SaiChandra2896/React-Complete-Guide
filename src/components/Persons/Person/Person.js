@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Radium from "radium";
 import "./Person.css";
+import WithClass from "../../../hoc/WithClass";
+
 let style = {
   display: "inline-block",
   "@media (min-width: 500px)": {
@@ -21,7 +23,7 @@ class Person extends Component {
   render() {
     console.log("[Person.js] inside render");
     return (
-      <div className="Person">
+      <WithClass Class="Person">
         <p onClick={this.props.click} style={style}>
           I'm {this.props.name} and I am {this.props.age} years old!
         </p>
@@ -31,7 +33,7 @@ class Person extends Component {
           onChange={this.props.change}
           value={this.props.name}
         />
-      </div>
+      </WithClass>
     );
   }
 }

@@ -3,6 +3,7 @@ import "./App.css";
 import Radium, { StyleRoot } from "radium";
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
+import WithClass from "../hoc/WithClass";
 
 class App extends Component {
   constructor(props) {
@@ -95,7 +96,7 @@ class App extends Component {
 
     return (
       <StyleRoot>
-        <div className="App">
+        <WithClass Class="App">
           <button onClick={() => this.setState({ showPersons: true })}>
             Show Persons
           </button>
@@ -106,8 +107,7 @@ class App extends Component {
             appTitle={this.props.title}
           />
           {persons}
-        </div>
-        <StyleRoot />
+        </WithClass>
       </StyleRoot>
     );
   }

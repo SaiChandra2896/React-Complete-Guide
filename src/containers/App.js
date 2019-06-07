@@ -90,17 +90,6 @@ class App extends Component {
   };
   render() {
     console.log("[App.js]inside render");
-    let persons = null;
-    if (this.state.showPersons) {
-      persons = (
-        <Persons
-          persons={this.state.persons}
-          clicked={this.deletePersonHandler}
-          changed={this.nameChangeHandler}
-        />
-      );
-    }
-
     return (
       <StyleRoot>
         <WithClass Class="App">
@@ -113,7 +102,15 @@ class App extends Component {
             togglePersons={this.togglePersonsHandler}
             appTitle={this.props.title}
           />
-          {persons}
+          {this.state.showPersons ? (
+            <Persons
+              persons={this.state.persons}
+              clicked={this.deletePersonHandler}
+              changed={this.nameChangeHandler}
+            />
+          ) : (
+            ""
+          )}
         </WithClass>
       </StyleRoot>
     );

@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import Person from "./Person/Person";
+//purecomponent has built in should component update life cycle method returned as true by default
 
 class Persons extends PureComponent {
   constructor(props) {
@@ -40,6 +41,7 @@ class Persons extends PureComponent {
   render() {
     console.log("[Persons.js] inside render");
     return this.props.persons.map((person, index) => {
+      //mapping the list of persons into jsx list and returning
       return (
         <Person
           name={person.name}

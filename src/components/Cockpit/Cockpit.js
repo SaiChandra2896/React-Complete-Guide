@@ -1,5 +1,6 @@
 import React from "react";
 import Radium from "radium";
+import Aux from "../../hoc/Aux";
 
 const cockpit = props => {
   const style = {
@@ -23,14 +24,14 @@ const cockpit = props => {
     classes.push("bold");
   }
   return (
-    <div>
+    <Aux>
       <h1>Hi, I'm a React App </h1>
       <h1>{props.appTitle}</h1>
       <p className={classes.join(" ")}> working</p>
       <button style={style} onClick={props.togglePersons}>
         Toggle Persons
       </button>
-    </div>
+    </Aux>
   );
 };
 
